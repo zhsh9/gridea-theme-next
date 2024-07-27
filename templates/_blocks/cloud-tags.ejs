@@ -1,18 +1,18 @@
 <div class="tags-box">
   <div class="tag-cloud-title language" data-lan="cloud-tags" data-count="<%= tags.length %>">
-    非常好！目前共计 <%= tags.length %> 个标签，继续努力！
+    Excellent! There are currently <%= tags.length %> tags, keep up the good work!
   </div>
   <div class="tag-cloud-list" id="tags">
     <% for(let i = 0; i < tags.length; i++) { %>
-      <%let count = 0;%>
+      <% let count = 0; %>
       <% for(let j = 0; j < site.posts.length; j++) { %>
         <% for(let k = 0; k < site.posts[j].tags.length; k++) { %>
           <% if (site.posts[j].tags[k].slug === tags[i].slug) { %>
-            <%count++;break%>
+            <% count++; break; %>
           <% } %>
         <% } %>
       <% } %>
-      <a class="cloud-tag" href="<%= tags[i].link %>" rel="<%=count%>"><%= tags[i].name %></a>
+      <a class="cloud-tag" href="<%= tags[i].link %>" rel="<%= count %>"><%= tags[i].name %></a>
     <% } %>
   </div>
 </div>
