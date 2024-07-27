@@ -165,7 +165,7 @@
       "name": "linkHoverColor",
       "label": "链接Hover颜色",
       "group": "颜色",
-      "value": "#222",
+      "value": "#fc6423",
       "type": "input",
       "card": "color"
     },
@@ -514,7 +514,7 @@
       "name": "indexHoverColor",
       "label": "目录Hover颜色",
       "group": "目录",
-      "value": "#fff",
+      "value": "#fc6423",
       "type": "input",
       "card": "color"
     },
@@ -522,7 +522,7 @@
       "name": "indexActiveColor",
       "label": "当前目录颜色",
       "group": "目录",
-      "value": "",
+      "value": "#fc6423",
       "type": "input",
       "card": "color"
     },
@@ -849,7 +849,7 @@
       "name": "shadow",
       "label": "Muse、Mist风格阴影效果",
       "group": "魔改",
-      "value": false,
+      "value": true,
       "type": "switch",
       "note": "仅Muse风格生效，建议Muse风格中添加标题背景图片时开启"
     },
@@ -1148,7 +1148,7 @@
       "label": "多语言",
       "group": "评论",
       "type": "select",
-      "value": "zh-cn",
+      "value": "en",
       "options": [
         {
           "label": "zh-cn",

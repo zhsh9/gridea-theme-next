@@ -350,10 +350,26 @@
   margin-left: 0;
 }
 
+// Original code font config
+// .next-md-body code,
+// .next-md-body pre {
+//   font-family: "JetBrainsMono-Regular";
+//   font-size: 12px;
+// }
+
 .next-md-body code,
 .next-md-body pre {
-  font-family: "JetBrainsMono-Regular";
+  font-family: 'MapleMono-NF-CN-Regular';
   font-size: 12px;
+}
+
+.next-md-body code .hljs-keyword {
+  font-family: 'MapleMono-NF-CN-Bold' !important;
+}
+
+// 防止代码块中的字体被其他CSS样式覆盖
+.next-md-body code * {
+  font-family: inherit !important;
 }
 
 .next-md-body pre {
