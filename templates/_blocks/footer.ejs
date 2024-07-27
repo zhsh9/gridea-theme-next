@@ -3,9 +3,9 @@
     <center id="runTimeBox">
       已运行:<span id="run_time"></span>
     </center>
-    <span id="busuanzi_container_site_pv">浏览数:<span id="busuanzi_value_site_pv"></span> 次</span>
+    <span id="busuanzi_container_site_pv" class="language" data-lan="view">浏览数:</span><span id="busuanzi_value_site_pv"></span>
     <span class="post-meta-divider">|</span>
-    <span id="busuanzi_container_site_uv">访客数:<span id="busuanzi_value_site_uv"></span> 人</span>
+    <span id="busuanzi_container_site_uv" class="language" data-lan="visit">访客数:</span><span id="busuanzi_value_site_uv"></span>
 
     <script>
       BirthDay = new Date('<%= site.customConfig.startTime %>');
@@ -28,7 +28,7 @@
       }
     </script>
     <div class="poweredby">
-      <%- site.themeConfig.footerInfo%>
+      <%- site.themeConfig.footerInfo%> © 2021-2024 ❤️ zhsh
     </div>
   </footer>
   <% let scheme=site.customConfig.scheme || 'pisces' ; %>

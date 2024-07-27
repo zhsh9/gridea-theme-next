@@ -9,13 +9,13 @@
       let date = times[i].dataset.t;
       let time = Math.floor((new Date().getTime() - new Date(date).getTime()) / 1000);
       if (time < 60) {
-        str = time + '秒之前';
+        str = time + ' seconds ago';
       } else if (time < 3600) {
-        str = Math.floor(time / 60) + '分钟之前';
+        str = Math.floor(time / 60) + ' minutes ago';
       } else if (time >= 3600 && time < 86400) {
-        str = Math.floor(time / 3600) + '小时之前';
+        str = Math.floor(time / 3600) + ' hours ago';
       } else if (time >= 86400 && time < 259200) {
-        str = Math.floor(time / 86400) + '天之前';
+        str = Math.floor(time / 86400) + ' days ago';
       } else {
         str = times[i].textContent;
       }
@@ -36,7 +36,7 @@
       map.set('top', 'Top');
       map.set('publish', 'published');
       map.set('minute', ' minutes');
-      map.set('read-more', 'Read More');
+      map.set('read-more', 'Read More »');
       map.set('view', 'View');
       map.set('words', ' words');
       map.set('category-in', 'category in');
@@ -46,6 +46,8 @@
       map.set('archives', " articles in total");
       map.set('cloud-tags', " tags in total");
       map.set('copyright', "Copyright: ");
+      map.set('copyright-content1', "All content on this blog, unless specifically stated otherwise, is licensed under a ");
+      map.set('copyright-content2', " license. Please attribute the source when reposting!");
       map.set('author', "Author: ");
       map.set('link', "Link: ");
       map.set('leave-message', "Leave a message");
@@ -56,6 +58,8 @@
       map.set('stat', " related results, taking ");
       map.set('stat-time', " ms");
       map.set('site-img', "Image: ");
+      map.set('view', "Page views:");
+      map.set('visit', "Visitors:");
     }
 
     if (map.size > 0) {
@@ -114,7 +118,7 @@
       try {
         document.execCommand("Copy")
       } catch (err) {
-        alert("复制错误！请手动复制！")
+        alert("Copy failed! Please copy it manually.")
       }
       document.body.removeChild(textArea);
     }
@@ -134,14 +138,14 @@
     if (e.srcElement.tagName === 'SPAN' && e.srcElement.classList.contains('copy-code')) {
       let code = e.currentTarget.querySelector('code');
       var text = code.innerText;
-      if (e.srcElement.textContent === '复制成功') {
+      if (e.srcElement.textContent === 'Copied!') {
         return;
       }
-      e.srcElement.textContent = '复制成功';
+      e.srcElement.textContent = 'Copied!';
       (function (elem) {
         setTimeout(() => {
-          if (elem.textContent === '复制成功') {
-            elem.textContent = '复制代码'
+          if (elem.textContent === 'Copied!') {
+            elem.textContent = 'Copy'
           }
         }, 1000);
       })(e.srcElement)
@@ -154,7 +158,7 @@
     let code = pre.querySelector('code');
     let copyElem = document.createElement('span');
     copyElem.classList.add('copy-code');
-    copyElem.textContent = '复制代码';
+    copyElem.textContent = 'Copy';
     pre.appendChild(copyElem);
     pre.onclick = copyCode
   })

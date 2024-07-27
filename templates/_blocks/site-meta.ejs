@@ -47,7 +47,7 @@
         <% if (site.customConfig.socials && site.customConfig.socials.length) { %>
           <% for(let i = 0; i < site.customConfig.socials.length; i++) { %>
             <a href="<%= site.customConfig.socials[i].socialLink %>">
-              <i class="fa <%= site.customConfig.socials[i].socialIcon %>" title="<%= site.customConfig.socials[i].socialName %>"></i>
+              <i class="fa <%= site.customConfig.socials[i].socialIcon %>" title="<%= site.customConfig.socials[i].socialName %>"></i><% if (site.customConfig.socials[i].socialName.toLowerCase() === 'github') { %>GitHub<% } else { %><%= site.customConfig.socials[i].socialName %><% } %>
             </a>
           <% } %>
         <% } %>
@@ -55,7 +55,7 @@
           <% for(let i = 0; i < site.customConfig.imgSocials.length; i++) { %>
             <a class="social-img" href="#">
               <img src="<%= site.customConfig.cdn %><%= site.customConfig.imgSocials[i].socialImg %>" />
-              <i class="fa <%= site.customConfig.imgSocials[i].socialIcon %>" title="<%= site.customConfig.imgSocials[i].socialName %>" ></i>
+              <i class="fa <%= site.customConfig.imgSocials[i].socialIcon %>" title="<%= site.customConfig.imgSocials[i].socialName %>" ></i><%= site.customConfig.imgSocials[i].socialName %>
             </a>
           <% } %>
         <% } %>

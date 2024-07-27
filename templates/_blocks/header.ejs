@@ -1,13 +1,22 @@
-<% let scheme = site.customConfig.scheme || 'pisces'; 
+<%
+let scheme = site.customConfig.scheme || 'pisces'; 
 let map = new Map(); 
-map.set('/','home'); 
+map.set('/','home');
+map.set('/home','home');
 map.set('/archives', 'archive'); 
 map.set('/archives/', 'archive'); 
 map.set('/tags','tags');
 map.set('/tags/','tags');
+map.set('/about','user');
+map.set('/about/','user');
 map.set('/post/about','user');
 map.set('/post/about/','user');
-map.set('/post/skin-update','info-circle'); %>
+map.set('/bookmark','bookmark');
+map.set('/bookmark/','bookmark');
+map.set('/post/skin-update','info-circle');
+map.set('https://htbwp.readthedocs.io/en/latest/', 'flag');
+%>
+
 <div class="<%= scheme !==''?scheme:'pisces' %>">
   <header class="header <%= scheme === 'mist' || scheme === 'muse'?'bg-color':''%> ">
     <div class="blog-header box-shadow-wrapper <%= scheme === 'gemini' || scheme === 'pisces'?'bg-color':''%> " id="header">
@@ -62,7 +71,7 @@ map.set('/post/skin-update','info-circle'); %>
               <% if (site.customConfig.menuIcon === 'default') { %>
                 <% if (iconValue) { %>
                   <a href="<%= href %>" target="<%= target %>">
-                    <i class="fa fa-<%= iconValue %>"></i> <%= menu.name %>
+                    <i class="fa fa-<%= iconValue %> fa-fw"></i> <%= menu.name %>
                   </a>
                 <% } else { %>
                   <a href="<%= href %>" target="<%= target %>">
@@ -73,9 +82,9 @@ map.set('/post/skin-update','info-circle'); %>
                 <a href="<%= href %>" target="<%= target %>">
                   <%= menu.name %>
                 </a>
-              <% } else { %>
+                <% } else { %>
                 <a href="<%= href %>" target="<%= target %>">
-                  <i class="fa fa-<%= iconValue || 'globe'%>"></i> <%= menu.name %>
+                  <i class="fa fa-<%= iconValue || 'flag'%> fa-fw"></i> <%= menu.name %>
                 </a>
               <% } %>
             </li>
